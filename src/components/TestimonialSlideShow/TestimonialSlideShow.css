@@ -1,0 +1,55 @@
+.slide-show {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.arrow {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  color: rgb(140, 101, 94);
+  filter: drop-shadow(0rem 0rem 1rem rgb(0,0,0,0.2));
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  color: rgb(141, 132, 131);
+}
+
+.arrow-left {
+  left: 1rem;
+}
+
+.arrow-right {
+  right: 1rem;
+}
+
+.slide-selections {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.selection {
+  background-color: rgb(140, 101, 94);
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0rem 0rem 1rem rgb(0,0,0,0.2);
+  margin: 0 0.3rem;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+.selection-inactive {
+  background-color: grey;
+}
