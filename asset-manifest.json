@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mppaintingandconstruction/static/css/main.abbcbfd1.css",
+    "main.js": "/mppaintingandconstruction/static/js/main.d228cbfe.js",
+    "static/media/vans.png": "/mppaintingandconstruction/static/media/vans.7a6f424725180c6441f8.png",
+    "static/media/m_and_p_logo.webp": "/mppaintingandconstruction/static/media/m_and_p_logo.45c01f24228ab1806fa4.webp",
+    "index.html": "/mppaintingandconstruction/index.html",
+    "main.abbcbfd1.css.map": "/mppaintingandconstruction/static/css/main.abbcbfd1.css.map",
+    "main.d228cbfe.js.map": "/mppaintingandconstruction/static/js/main.d228cbfe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abbcbfd1.css",
+    "static/js/main.d228cbfe.js"
+  ]
+}
