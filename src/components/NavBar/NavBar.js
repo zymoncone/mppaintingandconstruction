@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import "./NavBar.css"
 import MP_LOGO from "../../media/m_and_p_logo.webp"
+import { FaFacebookSquare } from "react-icons/fa";
 
 const NavButton = styled.button`
     margin: 1rem 0.5rem 0.1rem 0.5rem;
@@ -47,6 +48,7 @@ const NavBar = () => {
           Contact Us For a Free Estimate | 973-827-6350
         </p>
       </div>
+      <div class="nav-bar-container">
       <nav className="nav-bar">
         <NavButton $selected={(pageNum === 0)} onClick={() => handleClick("/", 0)}>
             Home
@@ -67,6 +69,12 @@ const NavBar = () => {
             Contact Us
         </NavButton>
       </nav>
+        <div class="fb-logo-container">
+          <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" style={{margin:0}}>
+            <FaFacebookSquare class="fb-logo"/>
+          </a>
+        </div>
+      </div>
     </div>
   )
 }
