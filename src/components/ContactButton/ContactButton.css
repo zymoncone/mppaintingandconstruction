@@ -1,0 +1,38 @@
+.button-74 {
+  background-color: #fbeee0;
+  border: 2px solid var(--secondary-color);
+  border-radius: 30px;
+  box-shadow: black 4px 4px 0 0;
+  color: var(--secondary-color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Expletus Sans", serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 200ms;
+}
+
+.button-74:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.button-74:active {
+  box-shadow: var(--secondary-color) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}

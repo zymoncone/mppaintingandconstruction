@@ -1,24 +1,74 @@
-.slide {
-  width: 100%;
-  max-height: 100%;
+.testimonial {
+  width: 60%;
   height: 100%;
   z-index: 2;
   color:black;
-  padding: 7rem 7rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
-.slide-hidden {
+.testimonial-hidden {
   display: none;
 }
 
-.quote-icon {
-  font-size: 2rem;
-  padding: 0 0 3rem 0;
+.customer-quote p {
+  font-family: "Expletus Sans", serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.testimonial-title {
+  font-family: "Expletus Sans", serif;
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+}
+
+.customer-quote {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .customer-location {
-  font-size: 1rem;
-  margin: 3rem 0 0 0;
+  font-family: "Expletus Sans", serif;
+  font-size: 18px;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .testimonial {
+    width: 70%;
+  }
+
+  .testimonial-title {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .customer-quote {
+    height: 60vh;
+  }
+
+  .customer-quote p {
+    font-family: "Expletus Sans", serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .customer-location {
+    font-family: "Expletus Sans", serif;
+    font-size: 12px;
+    margin: 0;
+  }
 }

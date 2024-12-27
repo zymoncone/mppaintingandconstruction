@@ -1,0 +1,133 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  margin: 0;
+}
+
+.projects-title {
+  font-family: "Expletus Sans", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 50px;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  width: 100%;
+  margin: 40px 0 60px 0;
+}
+
+.project-column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.project-row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 90px 0;
+  width: 100%;
+}
+
+.project-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.project-item {
+  height: auto;
+  width: 95%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-title-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: left;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.project-title-text {
+  font-family: "Expletus Sans", serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.project-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  margin: 20px 0 5px 0;
+  padding: 0;
+  width: 100%;
+}
+
+.project-fb-logo {
+  width: 16px;
+  height: auto;
+  color: var(--primary-color);
+  margin: 0 5px 0 0;
+}
+
+.project-date-text {
+  font-family: "Expletus Sans", serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .projects-title {
+    line-height: 1;
+    font-size: 35px;
+    margin: 50px 0 60px 0;
+  }
+
+  .project-row-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .project-item-container {
+    margin: 0 0 50px 0;
+  }
+
+  .project-item {
+    height: auto;
+    width: 100%;
+  }
+}

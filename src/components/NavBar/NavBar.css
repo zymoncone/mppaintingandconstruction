@@ -25,6 +25,7 @@
   flex-direction: row;
   align-items: left;
   text-align: left;
+  width: 100%;
 }
 
 .header-text {
@@ -37,6 +38,28 @@
   height: 4rem;
   width: auto;
   margin: 0 0 0.5rem 0;
+}
+
+.fb-logo {
+  height: 1.5rem;
+  width: auto;
+  padding: 0;
+  margin: 0 2rem 0 0;
+  fill: #316FF6;
+}
+
+.fb-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* align-items: center; */
+}
+
+.nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  text-align: left;
 }
 
 @media screen and (max-width: 1000px) {

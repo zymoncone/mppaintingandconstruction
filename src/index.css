@@ -1,11 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap');
+
+:root {
+  --primary-color: #fdf3e7;
+  --secondary-color: #1a1a1a;
+  --background-color: rgb(35, 35, 35);
+}
 
 body {
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
-  color: black;
+  /* background-color: #2d402c; */
+  /* background-color: #334729; */
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 h1 {
@@ -17,7 +24,7 @@ p {
 }
 
 a {
-  color: black;
+  color: var(--primary-color);
   text-decoration: none;
 }
 

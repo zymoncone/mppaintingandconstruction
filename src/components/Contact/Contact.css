@@ -1,0 +1,130 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0 100px 0;
+  padding: 0;
+  width: 100%;
+}
+
+.contact-form-title {
+  font-family: "Expletus Sans", serif;
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+}
+
+.contact-form-subtitle {
+  font-family: "Expletus Sans", serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--primary-color);
+  max-width: 500px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.contact-form input {
+  width: 500px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  font-family: "Expletus Sans", serif;
+}
+
+.contact-form textarea {
+  width: 500px;
+  height: 200px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  font-family: "Expletus Sans", serif;
+}
+
+.contact-success {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+.result-text {
+  font-family: "Expletus Sans", serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 15px 0;
+}
+
+.button-28 {
+  appearance: none;
+  background-color: var(--primary-color);
+  border: 2px solid #1A1A1A;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Expletus Sans", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 15px 0 0 0;
+  outline: none;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: max-content;
+  will-change: transform;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 900px) {
+  .contact-form input {
+    width: 85vw;
+  }
+
+  .contact-form textarea {
+    width: 85vw;
+  }
+
+  .contact-form-subtitle {
+    max-width: 85vw;
+  }
+}

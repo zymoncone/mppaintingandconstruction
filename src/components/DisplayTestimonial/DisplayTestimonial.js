@@ -1,4 +1,3 @@
-import { FaQuoteRight } from "react-icons/fa";
 import "./DisplayTestimonial.css"
 
 const hyperlink_color = {color:"#007bff"}
@@ -21,15 +20,15 @@ const renderText = (text) => {
       let allHyperlinkElements = []
       for (let j=0; j<sampleToHyperlink.length; j+=4) {
         if (j > 3) {
-          let hyperlink = <a href={sampleToHyperlink[j+1]} 
-                             style={hyperlink_color} 
-                             target="_blank" 
+          let hyperlink = <a href={sampleToHyperlink[j+1]}
+                             style={hyperlink_color}
+                             target="_blank"
                              rel="noopener noreferrer">{sampleToHyperlink[j]}</a>
           allHyperlinkElements.push(<span key={i+j}>{hyperlink}{sampleToHyperlink[j+2]}</span>)
         } else {
-          let hyperlink = <a href={sampleToHyperlink[j+2]} 
+          let hyperlink = <a href={sampleToHyperlink[j+2]}
                                    style={hyperlink_color}
-                                   target="_blank" 
+                                   target="_blank"
                                    rel="noopener noreferrer">{sampleToHyperlink[j+1]}</a>
           allHyperlinkElements.push(<span key={i+j}>{sampleToHyperlink[j]}{hyperlink}{sampleToHyperlink[j+3]}</span>)
         }
@@ -37,7 +36,7 @@ const renderText = (text) => {
       renderArr.push(<p key={i}>{allHyperlinkElements}</p>)
     } else {
       renderArr.push(<p key={i}>{sample}</p>)
-    }      
+    }
   }
   return (<div>{renderArr}</div>)
 }
@@ -46,11 +45,10 @@ const DisplayTestimonial = ({ source,
   index,
   slide }) => {
 
-  return (<div className={slide === index ? "slide" : "slide slide-hidden"}
-    key={index} >
-    <FaQuoteRight className="quote-icon" />
-    <p>{renderText(source.quote)}</p>
-    <p className="customer-location">{source.customers} | {source.location}</p>
+  return (<div className={slide === index ? "testimonial" : "testimonial testimonial-hidden"}>
+    <h1 className="testimonial-title">What My Customers Say</h1>
+    <div className="customer-quote">{renderText(source.quote)}</div>
+    <div className="customer-location">{source.customers} | {source.location}</div>
   </div>)
 }
 

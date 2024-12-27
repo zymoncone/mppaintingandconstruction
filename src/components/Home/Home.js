@@ -1,27 +1,25 @@
 import "./Home.css"
-import HomeFooter from "../HomeFooter/HomeFooter"
-import VANS from "../../media/vans.png"
+import { testimonials } from "../../media/testimonials"
+import home_page_main from "../../media/home_page_main.png"
+import ServicesBanner from "../ServicesBanner/ServicesBanner"
+import TestimonialSlideShow from "../TestimonialSlideShow/TestimonialSlideShow"
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="image-container">
-      <div className="vans">
-        <img src={VANS} alt="M&P Construction Vans" className="vans-image"/>
+      <div className="home-top">
+        <div className="home-title">
+          <h1 className="home-title-subtext">M&P Painting</h1>
+          <h1 className="home-title-subtext">& Remodeling</h1>
+        </div>
+        <div className="image-container">
+          <div className="vans">
+            <img src={home_page_main} alt="M&P Construction Vans" className="vans-image" />
+          </div>
+        </div>
       </div>
-      <div className="quote-container">
-      <p className="quote-text">
-      " Welcome to our page! Here you'll find out about our company and how we can make your project dreams come true. I highly encourage you to go to our 'past projects' tab and see some of our work. Feel free to contact me anytime. "
-      </p>
-      <p className="quote-text">
-        - Fernando Oyola
-      </p>
-      <p className="quote-text">
-        Company Owner
-      </p>
-      </div>
-      </div>
-      <HomeFooter />
+      <ServicesBanner />
+      <TestimonialSlideShow entry={testimonials}/>
     </div>
   )
 }
