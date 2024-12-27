@@ -55,3 +55,18 @@
 .testimonial-selection-inactive {
   background-color: grey;
 }
+
+@media screen and (max-width: 600px) {
+  .testimonial-slideshow {
+    height: 90vh;
+    padding: 0;
+  }
+
+  .testimonial-arrow-left {
+    left: 5px;
+  }
+
+  .testimonial-arrow-right {
+    right: 5px;
+  }
+}

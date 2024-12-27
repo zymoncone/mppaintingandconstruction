@@ -60,7 +60,7 @@
 }
 
 .selection {
-  background-color: rgb(255, 120, 120);
+  background-color: var(--primary-color);
   height: 0.7rem;
   width: 0.7rem;
   border-radius: 100%;
@@ -86,9 +86,9 @@
   .arrow-left {
     left: 0.3rem;
   }
-  
+
   .arrow-right {
     right: 0.3rem;
   }
-  
+
 }

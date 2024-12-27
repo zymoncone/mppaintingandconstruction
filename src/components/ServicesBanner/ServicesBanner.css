@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: self-start;
-  background-color: #1a1a1a;
+  background-color: var(--secondary-color);
   padding: 80px 30px;
   border-radius: 20px 20px 0 0;
 }
@@ -63,4 +63,30 @@
   align-self: start;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+  .services-banner {
+    justify-content: center;
+    align-items: center;
+    padding: 40px 30px 70px 30px;
+  }
+
+  .services-banner-title {
+    font-size: 40px;
+  }
+
+  .services-banner-blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 40px 0;
+  }
+
+  .services-banner-block {
+    margin: 10px 0;
+  }
 }

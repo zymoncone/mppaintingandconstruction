@@ -1,10 +1,13 @@
 import "./ContactButton.css";
+import { Link } from "react-router-dom";
 
-const ContactButton = ({ text, onClick }) => {
+const ContactButton = ({ text }) => {
   return (
-    <button className="button-74" onClick={onClick}>
-      {text}
-    </button>
+    <Link to={`contact`}>
+      <span className="button-74">
+        {text}
+      </span>
+    </Link>
   );
 }
 

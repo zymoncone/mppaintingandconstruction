@@ -13,7 +13,7 @@ import ContactButton from "../ContactButton/ContactButton";
 const ServicesBanner = () => {
   return (
     <div className="services-banner">
-        <h1 className="services-banner-title">Services</h1>
+        <h1 className="services-banner-title">My Services</h1>
         <div className="services-banner-blocks">
           <div className="services-banner-block">
             <GoHomeFill className="services-banner-block-icon" />
@@ -47,7 +47,7 @@ const ServicesBanner = () => {
             </div>
           </div>
         </div>
-        <ContactButton text="Get In Touch" onClick={() => {}} />
+        <ContactButton text="Get In Touch" />
     </div>
   );
 }

@@ -29,7 +29,7 @@ const TestimonialSlideShow = (props) => {
     {mutliSlides && <SlArrowLeft className="testimonial-arrow testimonial-arrow-left" onClick={prevSlide}/>}
       {props.entry.map((src, idx) => {
         return(
-        <DisplayTestimonial source={src} index={idx} slide={slide} />
+        <DisplayTestimonial key={idx} source={src} index={idx} slide={slide} />
         )
       })}
     {mutliSlides && <SlArrowRight className="testimonial-arrow testimonial-arrow-right" onClick={nextSlide}/>}

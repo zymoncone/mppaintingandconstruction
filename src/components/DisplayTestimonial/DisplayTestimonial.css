@@ -15,11 +15,6 @@
   display: none;
 }
 
-.quote-icon {
-  font-size: 48px;
-  padding: 0;
-}
-
 .customer-quote p {
   font-family: "Expletus Sans", serif;
   font-size: 18px;
@@ -46,4 +41,34 @@
   font-family: "Expletus Sans", serif;
   font-size: 18px;
   margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .testimonial {
+    width: 70%;
+  }
+
+  .testimonial-title {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .customer-quote {
+    height: 60vh;
+  }
+
+  .customer-quote p {
+    font-family: "Expletus Sans", serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .customer-location {
+    font-family: "Expletus Sans", serif;
+    font-size: 12px;
+    margin: 0;
+  }
 }

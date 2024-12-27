@@ -1,9 +1,9 @@
 .button-74 {
   background-color: #fbeee0;
-  border: 2px solid #422800;
+  border: 2px solid var(--secondary-color);
   border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
+  box-shadow: black 4px 4px 0 0;
+  color: var(--secondary-color);
   cursor: pointer;
   display: inline-block;
   font-family: "Expletus Sans", serif;
@@ -17,14 +17,16 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  transition: all 200ms;
 }
 
 .button-74:hover {
-  background-color: whitesmoke;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .button-74:active {
-  box-shadow: #422800 2px 2px 0 0;
+  box-shadow: var(--secondary-color) 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
 
