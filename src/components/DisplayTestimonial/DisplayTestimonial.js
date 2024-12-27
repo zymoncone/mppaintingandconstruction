@@ -45,7 +45,7 @@ const DisplayTestimonial = ({ source,
   index,
   slide }) => {
 
-  return (<div className={slide === index ? "slide" : "slide slide-hidden"}
+  return (<div className={slide === index ? "testimonial" : "testimonial testimonial-hidden"}
     key={index} >
     <h1 className="testimonial-title">Customer Testimonials</h1>
     <p className="customer-quote">{renderText(source.quote)}</p>

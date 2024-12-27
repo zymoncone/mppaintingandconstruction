@@ -25,18 +25,18 @@ const TestimonialSlideShow = (props) => {
   },[props.entry])
 
   return (
-  <div className="slide-show">
-    {mutliSlides && <SlArrowLeft className="arrow arrow-left" onClick={prevSlide}/>}
+  <div className="testimonial-slideshow">
+    {mutliSlides && <SlArrowLeft className="testimonial-arrow testimonial-arrow-left" onClick={prevSlide}/>}
       {props.entry.map((src, idx) => {
         return(
         <DisplayTestimonial source={src} index={idx} slide={slide} />
         )
       })}
-    {mutliSlides && <SlArrowRight className="arrow arrow-right" onClick={nextSlide}/>}
-    {mutliSlides && <span className="slide-selections">
+    {mutliSlides && <SlArrowRight className="testimonial-arrow testimonial-arrow-right" onClick={nextSlide}/>}
+    {mutliSlides && <span className="testimonial-selections">
       {props.entry.map((_, idx) => {
         return (
-          <button key={idx} onClick={() => setSlide(idx)} className={slide === idx ? "selection" : "selection selection-inactive"}></button>
+          <button key={idx} onClick={() => setSlide(idx)} className={slide === idx ? "testimonial-selection" : "testimonial-selection testimonial-selection-inactive"}></button>
         )
         })
       }
@@ -45,4 +45,4 @@ const TestimonialSlideShow = (props) => {
   )
 }
 
-export default TestimonialSlideShow
+export default TestimonialSlideShow;

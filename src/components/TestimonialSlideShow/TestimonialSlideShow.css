@@ -1,4 +1,4 @@
-.slide-show {
+.testimonial-slideshow {
   position: relative;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
   padding: 50px 0;
 }
 
-.arrow {
+.testimonial-arrow {
   position: absolute;
   width: 2rem;
   height: 2rem;
@@ -19,26 +19,26 @@
   transition: 0.2s;
 }
 
-.arrow:hover {
+.testimonial-arrow:hover {
   cursor: pointer;
   color: grey;
 }
 
-.arrow-left {
+.testimonial-arrow-left {
   left: 30px;
 }
 
-.arrow-right {
+.testimonial-arrow-right {
   right: 30px;
 }
 
-.slide-selections {
+.testimonial-selections {
   display: flex;
   position: absolute;
   bottom: 3rem;
 }
 
-.selection {
+.testimonial-selection {
   background-color: black;
   height: 0.7rem;
   width: 0.7rem;
@@ -52,6 +52,6 @@
   z-index: 2;
 }
 
-.selection-inactive {
+.testimonial-selection-inactive {
   background-color: grey;
 }

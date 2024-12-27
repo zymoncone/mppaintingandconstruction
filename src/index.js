@@ -8,6 +8,7 @@ import './index.css';
 import Root from './components/Root/Root';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Home from './components/Home/Home';
+import Projects from './components/Projects/Projects';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/past-projects",
-        element: <div>past projects</div>
+        element: <Projects />,
       }
     ],
   },

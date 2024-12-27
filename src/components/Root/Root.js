@@ -13,9 +13,9 @@ const Root = () => {
           <Link to={`past-projects`} className="past-projects-text">Past Projects</Link>
         </div>
         <div className="nav-more-info">
-          <div class="fb-logo-container">
+          <div className="fb-logo-container">
             <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
-              <FaFacebookF class="fb-logo" />
+              <FaFacebookF className="fb-logo" />
             </a>
           </div>
           <ContactButton text="Get In Touch" onClick={() => {}} />
