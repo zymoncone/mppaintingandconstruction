@@ -49,13 +49,13 @@ const Root = () => {
             </span>
           </div>
           <div className="nav-links-mobile" style={isOpen ? { display: 'flex' } : { display: 'none' }}>
-            <span onClick={() => setOpen(false)}>
+            <span className="nav-link-mobile" onClick={() => setOpen(false)}>
               <Link to={`services`} className="services-text">Services</Link>
             </span>
-            <span onClick={() => setOpen(false)}>
+            <span className="nav-link-mobile" onClick={() => setOpen(false)}>
               <Link to={`past-projects`} className="past-projects-text">Past Projects</Link>
             </span>
-            <span onClick={() => setOpen(false)}>
+            <span className="nav-link-mobile button-mobile" onClick={() => setOpen(false)}>
               <ContactButton text="Get In Touch" />
             </span>
           </div>

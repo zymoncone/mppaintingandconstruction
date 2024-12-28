@@ -10,6 +10,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import Home from './components/Home/Home';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
+import Services from './components/Services/Services';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <div>services</div>,
+        element: <Services />,
       },
       {
         path: "/past-projects",
@@ -35,7 +36,9 @@ const router = createBrowserRouter([
       }
     ],
   },
-]);
+], {
+  basename: "/mppaintingandconstruction"
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -15,7 +15,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 60px;
-  color:  var(--primary-color);
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -53,6 +53,7 @@
 .navbar-mobile {
   padding: 10px 0 0 0;
   margin: 0;
+  z-index: 100;
 }
 
 .hamburger-container {
@@ -79,7 +80,6 @@
 .nav-links-mobile {
   flex-direction: column;
   align-items: center;
-  width: 90vw;
   font-family: "Expletus Sans", serif;
   font-weight: 400;
   font-size: 20px;
@@ -88,4 +88,14 @@
   height: 100vh;
   width: 100vw;
   transition: all 300ms;
+  margin: 0;
+  padding: 50px 0 0 0;
+}
+
+.nav-link-mobile {
+  padding: 20px 0;
+}
+
+.button-mobile {
+  padding: 40vh 0 0 0;
 }
