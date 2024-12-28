@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-      // Redirect using history-based routing
-      const redirectTo = window.location.pathname + window.location.search;
-      window.location.href = redirectTo;
+      // Get the current pathname and search parameters
+      const currentPath = window.location.pathname + window.location.search;
+
+      // Check if the current location is already the root URL (or index.html)
+      // If it's not, redirect
+      if (currentPath !== "/") {
+        window.location.href = currentPath;
+      }
     </script>
   </head>
   <body>
-    <h1>Redirecting...</h1>
+    <p>Redirecting...</p>
   </body>
 </html>
