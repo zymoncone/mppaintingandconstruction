@@ -13,6 +13,7 @@ const Root = () => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
+    // console.log(window.location.href);
     if (isMobileDevice()) {
       setIsMobile(true);
     } else {
