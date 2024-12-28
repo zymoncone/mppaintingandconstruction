@@ -34,26 +34,46 @@
   justify-content: center;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 500px;
 }
 
 .contact-form input {
-  width: 500px;
+  width: 100%;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
   background-color: var(--primary-color);
-  font-family: "Expletus Sans", serif;
+  font-family: "Roboto", serif;
+  font-weight: 300;
 }
 
 .contact-form textarea {
-  width: 500px;
+  width: 100%;
   height: 200px;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
   background-color: var(--primary-color);
-  font-family: "Expletus Sans", serif;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+}
+
+.contact-form label {
+  font-family: "Roboto", serif;
+  font-weight: 200;
+  font-size: 16px;
+  color: var(--primary-color);
+  margin: 10px 0 0 0;
+  width: 100%;
+  text-emphasis: left;
+}
+
+.required-text {
+  font-family: "Roboto", serif;
+  font-weight: 200;
+  font-size: 12px;
+  color: var(--primary-color);
+  margin: 0 0 0 5px;
 }
 
 .contact-success {
@@ -66,31 +86,31 @@
 }
 
 .result-text {
-  font-family: "Expletus Sans", serif;
-  font-weight: 400;
+  font-family: "Roboto", serif;
+  font-weight: 300;
   font-style: italic;
-  margin: 15px 0;
+  margin: 20px 0 30px 0;
 }
 
 .button-28 {
   appearance: none;
   background-color: var(--primary-color);
   border: 2px solid #1A1A1A;
-  border-radius: 5px;
+  border-radius: 30px;
   box-sizing: border-box;
   color: black;
   cursor: pointer;
   display: inline-block;
-  font-family: "Expletus Sans", serif;
+  font-family: "Roboto", serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
   margin: 15px 0 0 0;
   outline: none;
   padding: 12px 30px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
@@ -118,10 +138,12 @@
 @media screen and (max-width: 900px) {
   .contact-form input {
     width: 85vw;
+    font-size: 14px;
   }
 
   .contact-form textarea {
     width: 85vw;
+    font-size: 14px;
   }
 
   .contact-form-subtitle {

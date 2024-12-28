@@ -78,13 +78,13 @@
 }
 
 .footer-fb-logo {
-  width: 16px;
+  width: 18px;
   height: auto;
   color: var(--primary-color);
   margin: 0.5rem 0 0 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .footer-content-top {
     flex-direction: column;
   }
@@ -99,5 +99,11 @@
 
   .footer-bottom-text {
     margin: 70px 0 0 0;
+  }
+
+  .footer-fb-logo {
+    width: 25px;
+    height: auto;
+    margin: 2rem 0 0 0;
   }
 }

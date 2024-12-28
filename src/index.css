@@ -6,6 +6,10 @@
   --background-color: rgb(35, 35, 35);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +17,12 @@ body {
   /* background-color: #334729; */
   background-color: var(--background-color);
   color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+html {
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 

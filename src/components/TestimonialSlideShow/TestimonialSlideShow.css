@@ -4,9 +4,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   background-color: var(--primary-color);
-  padding: 50px 0;
+  padding: 0 0 50px 0;
+  z-index: 2;
 }
 
 .testimonial-arrow {
@@ -21,7 +22,7 @@
 
 .testimonial-arrow:hover {
   cursor: pointer;
-  color: grey;
+  color: var(--background-color);
 }
 
 .testimonial-arrow-left {
@@ -56,17 +57,17 @@
   background-color: grey;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .testimonial-slideshow {
     height: 90vh;
     padding: 0;
   }
 
   .testimonial-arrow-left {
-    left: 5px;
+    left: 15px;
   }
 
   .testimonial-arrow-right {
-    right: 5px;
+    right: 15px;
   }
 }

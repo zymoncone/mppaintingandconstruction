@@ -16,9 +16,9 @@
 }
 
 .customer-quote p {
-  font-family: "Expletus Sans", serif;
+  font-family: "Roboto", serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0;
   padding: 10px 0;
 }
@@ -38,14 +38,16 @@
 }
 
 .customer-location {
-  font-family: "Expletus Sans", serif;
-  font-size: 18px;
+  font-family: "Roboto", serif;
+  font-weight: 200;
+  font-size: 15px;
   margin: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .testimonial {
     width: 70%;
+    padding: 50px 0 0 0;
   }
 
   .testimonial-title {
@@ -55,7 +57,7 @@
   }
 
   .customer-quote {
-    height: 60vh;
+    height: 70vh;
   }
 
   .customer-quote p {
@@ -69,6 +71,6 @@
   .customer-location {
     font-family: "Expletus Sans", serif;
     font-size: 12px;
-    margin: 0;
+    margin: 0 0 100px 0;
   }
 }

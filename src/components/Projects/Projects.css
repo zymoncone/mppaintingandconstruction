@@ -100,20 +100,20 @@
 }
 
 .project-date-text {
-  font-family: "Expletus Sans", serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-family: "Roboto", serif;
+  font-size: 14px;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   text-align: left;
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .projects-title {
     line-height: 1;
     font-size: 35px;
-    margin: 50px 0 60px 0;
+    margin: 55px 0;
   }
 
   .project-row-container {

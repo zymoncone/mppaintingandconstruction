@@ -77,7 +77,7 @@
   background-color: grey;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .slide-show {
     width: 100%;
     height: auto;

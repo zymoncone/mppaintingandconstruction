@@ -51,15 +51,16 @@
 
 /* MOBILE */
 .navbar-mobile {
-  padding: 10px 0 0 0;
+  padding: 15px 0 0 0;
   margin: 0;
-  z-index: 100;
+  z-index: 1;
 }
 
 .hamburger-container {
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding: 0 0 0 15px;
 }
 
 .hamburger {
@@ -74,7 +75,7 @@
   color:  var(--primary-color);
   width: 100%;
   text-align: right;
-  margin: 0 15px 0 0;
+  padding: 0 20px 0 0;
 }
 
 .nav-links-mobile {
@@ -97,5 +98,25 @@
 }
 
 .button-mobile {
-  padding: 40vh 0 0 0;
+  padding: 0;
+}
+
+.nav-mobile-fb-logo {
+  width: 30px;
+  height: auto;
+  color: var(--primary-color);
+  margin: 25vh 0 30px 0;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-links {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .nav-links {
+    width: 50%;
+    font-size: 16px;
+  }
 }
