@@ -2,20 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-      // This script will redirect to the correct route after the page loads
-      window.onload = function() {
-        var pathname = window.location.pathname;
-        var basePath = '/mppaintingandconstruction';
-        if (!pathname.startsWith(basePath)) {
-          var newUrl = window.location.origin + basePath + pathname;
-          window.location.replace(newUrl);
-        } else {
-          // If already in the correct base path, redirect to the root of the app
-          window.location.replace(window.location.origin + basePath + pathname);
-        }
-      };
+      // Redirect using history-based routing
+      const redirectTo = window.location.pathname + window.location.search;
+      window.location.href = redirectTo;
     </script>
   </head>
   <body>
