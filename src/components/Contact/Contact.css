@@ -136,13 +136,21 @@
 }
 
 @media screen and (max-width: 900px) {
+  .contact-form-title {
+    font-size: 45px;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+
   .contact-form input {
-    width: 85vw;
+    width: 100%;
     font-size: 14px;
   }
 
   .contact-form textarea {
-    width: 85vw;
+    width: 100%;
     font-size: 14px;
   }
 

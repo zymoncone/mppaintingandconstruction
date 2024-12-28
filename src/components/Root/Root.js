@@ -24,10 +24,10 @@ const Root = () => {
     <div className="root">
       {!isMobile &&
         <div className="navbar">
-          <Link to={``} className="logo">M&P</Link>
+          <Link to={`/`} className="logo">M&P</Link>
           <div className="nav-links">
-            <Link to={`services`} className="services-text">Services</Link>
-            <Link to={`past-projects`} className="past-projects-text">Past Projects</Link>
+            <Link to={`/services`} className="services-text">Services</Link>
+            <Link to={`/past-projects`} className="past-projects-text">Past Projects</Link>
           </div>
           <div className="nav-more-info">
             <div className="fb-logo-container">
@@ -45,18 +45,18 @@ const Root = () => {
               <Hamburger toggled={isOpen} toggle={setOpen} size={30} rounded={true} />
             </div>
             <span onClick={() => setOpen(false)}>
-              <Link to={``} className="logo-mobile">M&P</Link>
+              <Link to={`/`} className="logo-mobile">M&P</Link>
             </span>
           </div>
           <div className="nav-links-mobile" style={isOpen ? { display: 'flex' } : { display: 'none' }}>
             <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-              <Link to={``} className="services-text">Home</Link>
+              <Link to={`/`} className="services-text">Home</Link>
             </span>
             <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-              <Link to={`services`} className="services-text">Services</Link>
+              <Link to={`/services`} className="services-text">Services</Link>
             </span>
             <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-              <Link to={`past-projects`} className="past-projects-text">Past Projects</Link>
+              <Link to={`/past-projects`} className="past-projects-text">Past Projects</Link>
             </span>
             <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
               <FaFacebookF className="nav-mobile-fb-logo" />

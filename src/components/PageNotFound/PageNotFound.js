@@ -12,7 +12,7 @@ const PageNotFound = () => {
         <p>Let's get you back on track.</p>
       </div>
       <img src="https://media.giphy.com/media/OiC5BKaPVLl60/giphy.gif" alt="monkey on computer gif" className="error-gif" />
-      <Link to={``} className="button-28">
+      <Link to={`/`} className="button-28">
         <span>Return Home</span>
       </Link>
     </div>
