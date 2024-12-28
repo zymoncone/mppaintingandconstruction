@@ -13,7 +13,7 @@
           window.location.replace(newUrl);
         } else {
           // If already in the correct base path, redirect to the root of the app
-          window.location.replace(window.location.origin + basePath + '/');
+          window.location.replace(window.location.origin + basePath + pathname);
         }
       };
     </script>
