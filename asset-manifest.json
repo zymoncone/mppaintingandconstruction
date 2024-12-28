@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/mppaintingandconstruction/static/css/main.e10564de.css",
-    "main.js": "/mppaintingandconstruction/static/js/main.13c0f9a7.js",
+    "main.css": "/mppaintingandconstruction/static/css/main.f78a8065.css",
+    "main.js": "/mppaintingandconstruction/static/js/main.453f9d7d.js",
     "static/media/home_page_main.png": "/mppaintingandconstruction/static/media/home_page_main.2614717215ba65f8b063.png",
     "index.html": "/mppaintingandconstruction/index.html",
-    "main.e10564de.css.map": "/mppaintingandconstruction/static/css/main.e10564de.css.map",
-    "main.13c0f9a7.js.map": "/mppaintingandconstruction/static/js/main.13c0f9a7.js.map"
+    "main.f78a8065.css.map": "/mppaintingandconstruction/static/css/main.f78a8065.css.map",
+    "main.453f9d7d.js.map": "/mppaintingandconstruction/static/js/main.453f9d7d.js.map"
   },
   "entrypoints": [
-    "static/css/main.e10564de.css",
-    "static/js/main.13c0f9a7.js"
+    "static/css/main.f78a8065.css",
+    "static/js/main.453f9d7d.js"
   ]
 }
