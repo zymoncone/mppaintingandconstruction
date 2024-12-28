@@ -31,8 +31,8 @@ const Services = () => {
               <div className="service-list-item">Plumbing</div>
             </div>
             <div className="service-links-container">
-              <Link to={`/contact`} className="service-links">Get An Estimate</Link>
-              <Link to={`/past-projects`} className="service-links">See Examples</Link>
+              <Link to={`/contact#contact`} className="service-links">Get An Estimate</Link>
+              <Link to={`/past-projects#projects`} className="service-links">See Examples</Link>
             </div>
           </div>
         </div>
@@ -66,8 +66,8 @@ const Services = () => {
               <div className="service-list-item">Open Concept</div>
             </div>
             <div className="service-links-container">
-              <Link to={`/contact`} className="service-links">Get An Estimate</Link>
-              <Link to={`/past-projects`} className="service-links">See Examples</Link>
+              <Link to={`/contact#contact`} className="service-links">Get An Estimate</Link>
+              <Link to={`/past-projects#projects`} className="service-links">See Examples</Link>
             </div>
           </div>
         </div>
@@ -105,8 +105,8 @@ const Services = () => {
               <div className="service-list-item">Wet Bars Installation</div>
             </div>
             <div className="service-links-container">
-              <Link to={`/contact`} className="service-links">Get An Estimate</Link>
-              <Link to={`/past-projects`} className="service-links">See Examples</Link>
+              <Link to={`/contact#contact`} className="service-links">Get An Estimate</Link>
+              <Link to={`/past-projects#projects`} className="service-links">See Examples</Link>
             </div>
           </div>
         </div>
@@ -143,8 +143,8 @@ const Services = () => {
               <div className="service-list-item">Weather Sealing</div>
             </div>
             <div className="service-links-container">
-              <Link to={`/contact`} className="service-links">Get An Estimate</Link>
-              <Link to={`/past-projects`} className="service-links">See Examples</Link>
+              <Link to={`/contact#contact`} className="service-links">Get An Estimate</Link>
+              <Link to={`/past-projects#projects`} className="service-links">See Examples</Link>
             </div>
           </div>
         </div>
@@ -175,8 +175,8 @@ const Services = () => {
               <div className="service-list-item">Concrete, Brick, and Stone Facing</div>
             </div>
             <div className="service-links-container">
-              <Link to={`/contact`} className="service-links">Get An Estimate</Link>
-              <Link to={`/past-projects`} className="service-links">See Examples</Link>
+              <Link to={`/contact#contact`} className="service-links">Get An Estimate</Link>
+              <Link to={`/past-projects#projects`} className="service-links">See Examples</Link>
             </div>
           </div>
         </div>

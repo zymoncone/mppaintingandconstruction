@@ -1,5 +1,6 @@
 import "./Projects.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import SlideShow from "../SlideShow/SlideShow";
 import SOURCE_IMAGES from "../../assets/source_images";
 import { FaFacebookF } from "react-icons/fa";
@@ -20,8 +21,19 @@ const Projects = () => {
     setGalleryPhotos(e.target.getAttribute("image-urls").split(","));
   };
 
+  const location = useLocation();
+
+    useEffect(() => {
+      if (location.hash) {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, [location]);
+
   return (
-    <div className="projects">
+    <div className="projects" id="projects">
       <div className="projects-title">Past Projects</div>
       <div className="project-column-container">
         {

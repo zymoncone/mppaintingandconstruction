@@ -1,5 +1,6 @@
 import "./Contact.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -31,8 +32,19 @@ const Contact = () => {
     }
   };
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <div className="contact-form-title">Get In Touch</div>
       {!submitted && <div className="contact-form-subtitle">
         Fill out the form below for a
@@ -44,7 +56,7 @@ const Contact = () => {
           <div className="result-text">{result}</div>
           <button className="button-28" onClick={() => setSubmitted(false)}>Submit Another</button>
         </div>) :
-        (<form className="contact-form" onSubmit={onSubmit}>
+        (<form className="contact-form" onSubmit={onSubmit} netlify>
           <label htmlFor="name">Name<span className="required-text">(required)</span></label>
           <input type="text" id="name" name="name" required />
 
