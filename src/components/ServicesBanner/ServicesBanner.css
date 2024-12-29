@@ -34,8 +34,8 @@
   height: calc(600px - 10vw);
   padding: 30px 25px;
   margin: 0 10px;
-  background-color: var(--primary-color);
-  color: black;
+  background-color: var(--sub-background-color);
+  color: var(--secondary-color);
   border-radius: 5px;
 }
 

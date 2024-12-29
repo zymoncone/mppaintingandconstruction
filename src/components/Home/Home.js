@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-top">
-        <div className="home-title">
+        {/* <div className="home-title">
           <h1 className="home-title-subtext">M&P Painting</h1>
           <h1 className="home-title-subtext">& Remodeling</h1>
-        </div>
+        </div> */}
         <div className="image-container">
           <div className="vans">
             <img src={home_page_main} alt="Fernando Oyola standing in front of his vans" className="vans-image" />

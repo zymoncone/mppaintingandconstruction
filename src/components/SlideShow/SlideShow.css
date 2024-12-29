@@ -61,7 +61,7 @@
 }
 
 .selection {
-  background-color: var(--primary-color);
+  background-color: var(--primary-red);
   height: 0.7rem;
   width: 0.7rem;
   border-radius: 100%;

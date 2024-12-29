@@ -1,8 +1,8 @@
 .button-74 {
-  background-color: var(--primary-color);
+  background-color: var(--primary-red);
   border: 2px solid var(--secondary-color);
   border-radius: 30px;
-  box-shadow: black 4px 4px 0 0;
+  box-shadow: var(--primary-color) 4px 4px 0 0;
   color: var(--secondary-color);
   cursor: pointer;
   display: inline-block;

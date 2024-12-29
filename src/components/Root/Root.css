@@ -7,7 +7,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 30px;
+  padding: 20px 30px;
+  background-color: var(--primary-red);
+}
+
+.nav-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 20px 0;
+}
+
+.nav-header {
+  font-family: "Roboto", serif;
+  font-weight: 800;
+  font-size: 60px;
+  padding: 30px 0 15px 0;
+  color: rgb(42, 42, 157);
+}
+
+.nav-subheader {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--primary-red);
 }
 
 .logo {
@@ -20,20 +43,21 @@
 
 .nav-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   align-items: center;
-  width: 30%;
+  width: max-content;
   font-family: "Expletus Sans", serif;
   font-weight: 700;
   font-size: 20px;
 }
 
 .past-projects-text {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .services-text {
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  margin: 0 35px;
 }
 
 .nav-more-info {
@@ -45,7 +69,7 @@
 .fb-logo {
   width: 25px;
   height: auto;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   margin: 0 18px 0 0;
 }
 
@@ -65,6 +89,7 @@
 
 .hamburger {
   width: 100%;
+  color: var(--primary-red);
 }
 
 .logo-mobile {
@@ -72,7 +97,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 30px;
-  color:  var(--primary-color);
+  color:  var(--primary-red);
   width: 100%;
   text-align: right;
   padding: 0 20px 0 0;
@@ -104,7 +129,7 @@
 .nav-mobile-fb-logo {
   width: 30px;
   height: auto;
-  color: var(--primary-color);
+  color: var(--primary-red);
   margin: 25vh 0 30px 0;
 }
 
@@ -118,5 +143,36 @@
   .nav-links {
     width: 50%;
     font-size: 16px;
+  }
+
+  .nav-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 30px 0;
+  }
+
+  .nav-header {
+    font-family: "Roboto", serif;
+    font-weight: 800;
+    font-size: 40px;
+    padding: 15px 0 15px 0;
+    color: rgb(42, 42, 157);
+    text-align: center;
+  }
+
+  .nav-subheader {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--primary-red);
+  }
+
+  .services-text {
+    color: var(--primary-red);
+  }
+
+  .past-projects-text {
+    color: var(--primary-red);
   }
 }

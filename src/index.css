@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-  --primary-color: #fdf3e7;
+  /* --primary-color: #fdf3e7;
   --secondary-color: #1a1a1a;
-  --background-color: rgb(35, 35, 35);
+  --background-color: rgb(35, 35, 35); */
+  --primary-color: #434343;
+  --secondary-color: white;
+  --background-color: whitesmoke;
+  --primary-red: rgb(255, 53, 17);
+  --sub-background-color: #434343;
 }
 
 * {
