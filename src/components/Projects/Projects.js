@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SlideShow from "../SlideShow/SlideShow";
 import SOURCE_IMAGES from "../../assets/source_images";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const Projects = () => {
   const ROW_SIZE = 2;
@@ -51,8 +51,8 @@ const Projects = () => {
                     />
                     <div className="project-title-container">
                       <div className="project-title-text">{image.title}</div>
-                      <a href={image["facbook-link"]} target="_blank" rel="noreferrer" style={{ margin: 0 }}>
-                        <FaFacebookF className="project-fb-logo" />
+                      <a href={image["facbook-link"]} target="_blank" rel="noreferrer" className="project-fb-container">
+                        <FaFacebookSquare className="project-fb-logo" />
                       </a>
                     </div>
                     <div className="project-date-text">{image.date}</div>

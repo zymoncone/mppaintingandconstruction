@@ -1,27 +1,41 @@
-import "./Home.css"
-import { testimonials } from "../../media/testimonials"
-import home_page_main from "../../media/home_page_main.png"
-import ServicesBanner from "../ServicesBanner/ServicesBanner"
-import TestimonialSlideShow from "../TestimonialSlideShow/TestimonialSlideShow"
-import AboutBanner from "../AboutBanner/AboutBanner"
+import "./Home.css";
+import { useState, useEffect } from "react";
+import { testimonials } from "../../media/testimonials";
+import { isMobileDevice } from "../../assets/helper_functions";
+import ServicesBanner from "../ServicesBanner/ServicesBanner";
+import TestimonialSlideShow from "../TestimonialSlideShow/TestimonialSlideShow";
+import AboutBanner from "../AboutBanner/AboutBanner";
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (isMobileDevice()) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, []);
+
   return (
     <div className="home">
       <div className="home-top">
-        {/* <div className="home-title">
-          <h1 className="home-title-subtext">M&P Painting</h1>
-          <h1 className="home-title-subtext">& Remodeling</h1>
-        </div> */}
+        {isMobile && <div className="nav-subheader">
+          <span className="underlined">
+            Serving North New Jersey for over 20 years
+          </span>
+        </div>}
         <div className="image-container">
           <div className="vans">
-            <img src={home_page_main} alt="Fernando Oyola standing in front of his vans" className="vans-image" />
+            {isMobile ?
+            (<img src="https://i.imgur.com/xaoNvw4.png" alt="Fernando Oyola standing in front of his vans" />) :
+            (<img src="https://i.imgur.com/Qf4Fkkj.png" alt="Fernando Oyola standing in front of his vans" className="vans-image" />)}
           </div>
         </div>
       </div>
       <ServicesBanner />
       <AboutBanner />
-      <TestimonialSlideShow entry={testimonials}/>
+      <TestimonialSlideShow entry={testimonials} />
     </div>
   )
 }

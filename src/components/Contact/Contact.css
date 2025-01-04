@@ -97,7 +97,7 @@
 .button-28 {
   appearance: none;
   background-color: var(--primary-red);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--secondary-color);
   border-radius: 30px;
   box-sizing: border-box;
   color: var(--secondary-color);

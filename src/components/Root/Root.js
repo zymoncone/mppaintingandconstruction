@@ -1,11 +1,12 @@
 import "./Root.css";
 import { Link, Outlet } from "react-router-dom";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 import ContactButton from "../ContactButton/ContactButton";
 import Footer from "../Footer/Footer";
 import { useState, useEffect } from "react";
 import { isMobileDevice } from "../../assets/helper_functions";
-import { Squeeze as Hamburger } from 'hamburger-react';
+import { Twirl as Hamburger } from 'hamburger-react';
+import Logo from "../Logo/Logo";
 
 const Root = () => {
 
@@ -13,7 +14,6 @@ const Root = () => {
   const [isOpen, setOpen] = useState(false);
 
   useEffect(() => {
-    // console.log(window.location.href);
     if (isMobileDevice()) {
       setIsMobile(true);
     } else {
@@ -24,10 +24,14 @@ const Root = () => {
   return (
     <div className="root">
       {!isMobile &&
-        <div>
+        <div className="navbar-container">
           <div className="nav-header-container">
-            <div className="nav-header">M&P Painting & Remodeling</div>
-            <div className="nav-subheader">Serving North New Jersey for over 20 years</div>
+            <Logo />
+            <div className="nav-subheader">
+              <span className="underlined">
+                Serving North New Jersey for over 20 years
+              </span>
+            </div>
           </div>
           <div className="navbar">
             <div className="nav-links">
@@ -36,11 +40,9 @@ const Root = () => {
               <Link to={`/past-projects`} className="past-projects-text">Past Projects</Link>
             </div>
             <div className="nav-more-info">
-              <div className="fb-logo-container">
-                <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
-                  <FaFacebookF className="fb-logo" />
-                </a>
-              </div>
+              <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" className="fb-logo-container">
+                <FaFacebookSquare className="fb-logo" />
+              </a>
               <ContactButton text="Get In Touch" />
             </div>
           </div>
@@ -50,31 +52,32 @@ const Root = () => {
 
           <div className="navbar-mobile">
             <div className="hamburger-container">
-              <div className="hamburger">
-                <Hamburger toggled={isOpen} toggle={setOpen} size={30} rounded={true} />
-              </div>
-            </div>
-            <div className="nav-links-mobile" style={isOpen ? { display: 'flex' } : { display: 'none' }}>
-              <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-                <Link to={`/`} className="services-text">Home</Link>
-              </span>
-              <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-                <Link to={`/services`} className="services-text">Services</Link>
-              </span>
-              <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-                <Link to={`/past-projects`} className="past-projects-text">Past Projects</Link>
-              </span>
-              <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
-                <FaFacebookF className="nav-mobile-fb-logo" />
-              </a>
-              <span className="nav-link-mobile button-mobile" onClick={() => setOpen(false)}>
+              <Link to={`/`} onClick={() => setOpen(false)}>
+                <Logo />
+              </Link>
+              <span className="nav-link-button" onClick={() => setOpen(false)}>
                 <ContactButton text="Get In Touch" />
               </span>
+              <div className="hamburger">
+                <Hamburger toggled={isOpen} toggle={setOpen} size={42} rounded={true} />
+              </div>
             </div>
-          </div>
-          <div className="nav-header-container">
-            <div className="nav-header">M&P Painting & Remodeling</div>
-            <div className="nav-subheader">Serving North New Jersey for over 20 years</div>
+            <div className="grid-rows-collapsible" style={isOpen ? { gridTemplateRows: "1fr" } : {}}>
+              <div className="nav-links-mobile" style={isOpen ? { borderBottom: "2px solid var(--primary-red)"} : {}}>
+                <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+                  <Link to={`/`} className="services-text">Home</Link>
+                </span>
+                <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+                  <Link to={`/services`} className="services-text">Services</Link>
+                </span>
+                <span className="nav-link-mobile" onClick={() => setOpen(false)}>
+                  <Link to={`/past-projects`} className="past-projects-text">Past Projects</Link>
+                </span>
+                <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer">
+                  <FaFacebookSquare className="nav-mobile-fb-logo" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       }

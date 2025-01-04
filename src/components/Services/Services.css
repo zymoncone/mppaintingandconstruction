@@ -149,7 +149,6 @@
 @media screen and (max-width: 800px) {
   .services {
     margin: 0;
-    border-top: 3px solid var(--primary-red);
   }
 
   .services-title {

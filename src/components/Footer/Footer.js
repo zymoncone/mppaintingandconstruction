@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -15,8 +15,8 @@ const Footer = () => {
           <div className="footer-title">Contact Me</div>
           <div className="footer-text"><a href="mailto:mppaintingandconstruction@yahoo.com">mppaintingandconstruction@yahoo.com</a></div>
           <div className="footer-text"><a href="tel:973-827-6350">(973) 827-6350</a></div>
-          <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" style={{ margin: 0 }}>
-            <FaFacebookF className="footer-fb-logo" />
+          <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer">
+            <FaFacebookSquare className="footer-fb-logo" />
           </a>
         </div>
       </div>
