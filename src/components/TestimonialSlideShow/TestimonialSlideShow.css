@@ -7,7 +7,7 @@
   height: 90vh;
   background-color: var(--primary-color);
   padding: 0 0 50px 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .testimonial-arrow {

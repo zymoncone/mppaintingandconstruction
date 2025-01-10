@@ -3,7 +3,7 @@ import "./Services.css";
 
 const Services = () => {
   return (
-    <div className="services">
+    <div className="services" id="services">
       <div className="services-title">Services</div>
 
       {/* BATHROOM REMODEL */}

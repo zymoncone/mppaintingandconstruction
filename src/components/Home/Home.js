@@ -18,7 +18,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div className="home" id="home">
       <div className="home-top">
         {isMobile && <div className="nav-subheader">
           <span className="underlined">

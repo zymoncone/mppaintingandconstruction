@@ -128,11 +128,28 @@
 .grid-rows-collapsible {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 300ms;
+  transition: grid-template-rows 300ms ease-in-out;
 }
 
 .grid-rows-collapsible > div {
   overflow: hidden;
+}
+
+.nav-button-header-container-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-button-header-container-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links-mobile {
@@ -151,13 +168,27 @@
 }
 
 .nav-link-mobile {
-  padding: 70px 0 0 0;
+  margin: 20px 0;
 }
 
 .nav-link-button {
-  padding: 0 20px 0 0;
-  width: 100%;
+  padding: 0;
+  width: max-content;
   text-align: right;
+}
+
+.nav-tel-text {
+  text-align: center;
+  width: max-content;
+  padding: 5px 0 0 0;
+}
+
+.nav-tel-text a {
+  font-family: "Roboto", serif;
+  color: var(--primary-red);
+  font-size: 15px;
+  text-align: right;
+  width: 100%;
 }
 
 .nav-mobile-fb-logo {
@@ -165,6 +196,63 @@
   height: auto;
   color: var(--fb-logo);
   margin: 15vh 0 2rem 0;
+}
+
+/* root button */
+.root-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  background-color: rgba(255, 115, 115, 0);
+  transition: background-color 300ms;
+  z-index: 1;
+}
+
+.root-button {
+  color: var(--secondary-color);
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(227, 50, 50, 0.3);
+  padding: 15px;
+  margin: 0 10px 20px 0;
+  cursor: pointer;
+  width: max-content;
+}
+
+.root-button-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: flex-end;
+  font-family: "Expletus Sans", serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0 20px 30px 0;
+  padding: 0;
+}
+
+.root-button-text {
+  color: var(--secondary-color);
+}
+
+.nav-menu-mobile-bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
+  border-top: 2px solid var(--secondary-color);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 900px) {
@@ -215,5 +303,11 @@
 
   .past-projects-text {
     color: var(--primary-red);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav-subheader {
+    font-size: 16px;
   }
 }

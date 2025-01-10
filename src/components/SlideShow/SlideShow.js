@@ -24,7 +24,7 @@ const SlideShow = (props) => {
     if (props.entry.length === 1) {
       setMultiSlides(false)
     }
-  },[props.entry])
+  }, [props.entry])
 
   useEffect(() => {
     console.log("setting prop", props.activeSlide)
@@ -32,26 +32,26 @@ const SlideShow = (props) => {
   }, [props.activeSlide])
 
   return (
-  <div className="slide-show-container">
-  <GoXCircleFill className="x-circle" onClick={props.handleClose} />
-  <div key={props.idx} className="slide-show">
-    {mutliSlides && <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide}/>}
-      {props.entry.map((src, idx) => {
-        return(
-          <DisplayImage key={idx} source={src} index={idx} slide={slide} />
-        )
-      })}
-    {mutliSlides && <BsArrowRightCircleFill className="arrow arrow-right" onClick={nextSlide}/>}
-    {mutliSlides && <span className="slide-selections">
-      {props.entry.map((_, idx) => {
-        return (
-          <button key={idx} onClick={() => setSlide(idx)} className={slide === idx ? "selection" : "selection selection-inactive"}></button>
-        )
-        })
-      }
-    </span>}
-  </div>
-  </div>
+    <div className="slide-show-container">
+      <GoXCircleFill className="x-circle" onClick={props.handleClose} />
+      <div key={props.idx} className="slide-show">
+        {mutliSlides && <BsArrowLeftCircleFill className="arrow arrow-left" onClick={prevSlide} />}
+        {props.entry.map((src, idx) => {
+          return (
+            <DisplayImage key={idx} source={src} index={idx} slide={slide} />
+          )
+        })}
+        {mutliSlides && <BsArrowRightCircleFill className="arrow arrow-right" onClick={nextSlide} />}
+        {mutliSlides && <span className="slide-selections">
+          {props.entry.map((_, idx) => {
+            return (
+              <button key={idx} onClick={() => setSlide(idx)} className={slide === idx ? "selection" : "selection selection-inactive"}></button>
+            )
+          })
+          }
+        </span>}
+      </div>
+    </div>
   )
 }
 

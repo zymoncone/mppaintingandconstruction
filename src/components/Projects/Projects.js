@@ -1,6 +1,5 @@
 import "./Projects.css";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import SlideShow from "../SlideShow/SlideShow";
 import SOURCE_IMAGES from "../../assets/source_images";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -21,16 +20,18 @@ const Projects = () => {
     setGalleryPhotos(e.target.getAttribute("image-urls").split(","));
   };
 
-  const location = useLocation();
-
-    useEffect(() => {
-      if (location.hash) {
-        const element = document.getElementById(location.hash.substring(1));
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }, [location]);
+  useEffect(() => {
+    // Prevent scrolling when gallery is open
+    if (openGallery) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'auto';
+    }
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, [openGallery]);
 
   return (
     <div className="projects" id="projects">

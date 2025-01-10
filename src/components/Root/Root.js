@@ -1,5 +1,5 @@
 import "./Root.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaFacebookSquare } from "react-icons/fa";
 import ContactButton from "../ContactButton/ContactButton";
 import Footer from "../Footer/Footer";
@@ -12,6 +12,18 @@ const Root = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setOpen] = useState(false);
+  const [isRootOpen, setRootOpen] = useState(false);
+
+  const menuOpenSettings = {
+    backgroundColor: "rgba(81, 39, 39, 0.8)",
+    height: "100%",
+    width: "100%"
+  };
+  const menuClosedSettings = {
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    height: 0,
+    width: 0
+  };
 
   useEffect(() => {
     if (isMobileDevice()) {
@@ -21,8 +33,19 @@ const Root = () => {
     }
   }, []);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="root">
+    <div className="root" id="root">
       {!isMobile &&
         <div className="navbar-container">
           <div className="nav-header-container">
@@ -49,21 +72,54 @@ const Root = () => {
         </div>}
       {isMobile &&
         <div>
+          <div className="root-button-container" style={isRootOpen ? menuOpenSettings : menuClosedSettings}>
 
+            <div className="grid-rows-collapsible" style={isRootOpen ? { gridTemplateRows: "1fr" } : {}}>
+              <div className="root-button-links">
+                <span className="nav-link-mobile" onClick={() => setRootOpen(false)}>
+                  <Link to={`/#root`} className="root-button-text">Home</Link>
+                </span>
+                <span className="nav-link-mobile" onClick={() => setRootOpen(false)}>
+                  <Link to={`/services#root`} className="root-button-text">Services</Link>
+                </span>
+                <span className="nav-link-mobile" onClick={() => setRootOpen(false)}>
+                  <Link to={`/past-projects#root`} className="root-button-text">Past Projects</Link>
+                </span>
+                <div className="nav-menu-mobile-bottom-container">
+                <a className="nav-link-mobile root-button-text"
+                   href="https://www.facebook.com/mandpcompany/"
+                   target={isMobile ? "" : "_blank"}
+                   rel={isMobile ? "" : "noreferrer"}>
+                  Check Us Out on Facebook
+                </a>
+                <span className="nav-link-mobile" onClick={() => setRootOpen(false)}>
+                  <Link to={`/contact#root`} className="root-button-text">Get In Touch</Link>
+                </span>
+                </div>
+
+              </div>
+            </div>
+            <div className="root-button">
+              <Hamburger toggled={isRootOpen} toggle={setRootOpen} size={42} rounded={true} />
+            </div>
+
+          </div>
           <div className="navbar-mobile">
             <div className="hamburger-container">
               <Link to={`/`} onClick={() => setOpen(false)}>
                 <Logo />
               </Link>
-              <span className="nav-link-button" onClick={() => setOpen(false)}>
-                <ContactButton text="Get In Touch" />
-              </span>
-              <div className="hamburger">
-                <Hamburger toggled={isOpen} toggle={setOpen} size={42} rounded={true} />
+              <div className="nav-button-header-container-row">
+                <div className="nav-button-header-container-column">
+                  <span className="nav-link-button" onClick={() => setOpen(false)}>
+                    <ContactButton text="Get In Touch" />
+                  </span>
+                  <div className="nav-tel-text"><a href="tel:973-827-6350">(973) 827-6350</a></div>
+                </div>
               </div>
             </div>
             <div className="grid-rows-collapsible" style={isOpen ? { gridTemplateRows: "1fr" } : {}}>
-              <div className="nav-links-mobile" style={isOpen ? { borderBottom: "2px solid var(--primary-red)"} : {}}>
+              <div className="nav-links-mobile" style={isOpen ? { borderBottom: "2px solid var(--primary-red)" } : {}}>
                 <span className="nav-link-mobile" onClick={() => setOpen(false)}>
                   <Link to={`/`} className="services-text">Home</Link>
                 </span>
