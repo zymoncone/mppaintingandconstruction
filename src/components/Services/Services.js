@@ -16,7 +16,7 @@ const Services = () => {
           <div className="service-text-subcontainer">
             <div className="service-paragraph">
               If you want to improve the functionality or appearance of your bathroom,
-              count on me for the job.
+              count on us for the job.
               Rest assured that you will get the bathroom you have always wanted
               with my quality products and services.
             </div>
@@ -47,12 +47,12 @@ const Services = () => {
           <div className="service-title">Kitchen Remodel</div>
           <div className="service-text-subcontainer">
             <div className="service-paragraph">
-            Allow me to make your kitchen beautiful!
+            Allow us to make your kitchen beautiful!
             Do you want to remodel your kitchen and make it
             look even more stunning than it is now? Trust the experts
             at M&P to take care of all your remodeling needs.
             Get consulation about your dream kitchen and
-            rely on me to fulfill your vision.
+            rely on us to fulfill your vision.
             </div>
             <div className="service-list">
               <div className="service-list-title">Kitchen Remodel Services</div>
@@ -85,7 +85,7 @@ const Services = () => {
             Don't let your basement space go to waste! At M&P, I
             believe that there's no limit to imagination. If
             you have thought of ways to enhance your basement space,
-            count on me to bring your ideas to life. Trust me to
+            count on us to bring your ideas to life. Trust us to
             provide you with complete basement remodeling and finishing
             services. Whether you want to install hardwood flooring or
             a home theater system, I will handle everything with ease!

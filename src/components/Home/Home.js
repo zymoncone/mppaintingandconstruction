@@ -98,7 +98,7 @@ const Home = () => {
                       <FaStar key={i} />
                     ))}
                   </div>
-                  <p>"Exceptional quality and service" - <span className="review-source">Google Reviews</span></p>
+                  <p>"Exceptional quality and service" - <span style={{fontWeight: 600, fontStyle: "normal"}}>Google Reviews</span></p>
                 </div>
               </div>
             </div>
@@ -111,11 +111,11 @@ const Home = () => {
       <ScrollAnimation type="fade-right">
         <ServicesBanner />
       </ScrollAnimation>
-      <ScrollAnimation type="fade-left">
-        <AboutBanner />
-      </ScrollAnimation>
       <ScrollAnimation type="fade-up">
         <TestimonialSlideShow entry={testimonials} />
+      </ScrollAnimation>
+      <ScrollAnimation type="fade-left">
+        <AboutBanner />
       </ScrollAnimation>
       <ScrollAnimation type="fade-up">
         <CallToAction />

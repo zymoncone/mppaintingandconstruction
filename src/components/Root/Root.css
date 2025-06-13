@@ -50,9 +50,9 @@
 
 .nav-links {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
-  width: max-content;
+  width: 350px;
   font-family: "Expletus Sans", serif;
   font-weight: 700;
   font-size: 20px;
@@ -64,7 +64,7 @@
 
 .services-text {
   color: var(--primary-red);
-  margin: 0 35px;
+  /* margin: 0 35px; */
 }
 
 .nav-more-info {

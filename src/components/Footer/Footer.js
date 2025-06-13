@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer-text">DoCA License #13VH09587100</div>
         </div>
         <div className="footer-content-right">
-          <div className="footer-title">Contact Me</div>
+          <div className="footer-title">Contact Us</div>
           <div className="footer-text"><a href="mailto:mppaintingandconstruction@gmail.com">mppaintingandconstruction@gmail.com</a></div>
           <div className="footer-text"><a href="tel:973-827-6350">+1 (973) 827-6350</a></div>
           <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer">

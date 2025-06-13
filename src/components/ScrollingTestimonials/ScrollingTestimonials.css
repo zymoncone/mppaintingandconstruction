@@ -36,12 +36,16 @@
   width: 100%;
   height: calc(100% - 100px);
   max-width: 1200px;
-  overflow: hidden;
+  overflow-y: hidden; /* Hidden to prevent user scrolling */
+  overflow-x: hidden;
   position: relative;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For IE and Edge */
   padding: 20px 0;
   margin-top: 20px;
+  will-change: transform; /* Better hint for animations */
+  -webkit-overflow-scrolling: none; /* Disable touch scrolling */
+  pointer-events: none; /* Prevent all scroll interactions */
 }
 
 .scrolling-testimonials-container::-webkit-scrollbar {
@@ -55,19 +59,19 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 120px; /* Increased height for smoother transition */
   z-index: 5;
   pointer-events: none;
 }
 
 .scrolling-testimonials-container::before {
   top: 0;
-  background: linear-gradient(to bottom, var(--primary-color), rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, var(--primary-color) 30%, rgba(0, 0, 0, 0));
 }
 
 .scrolling-testimonials-container::after {
   bottom: 0;
-  background: linear-gradient(to top, var(--primary-color), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, var(--primary-color) 30%, rgba(0, 0, 0, 0));
 }
 
 .testimonial-cards {
@@ -78,6 +82,12 @@
   gap: 40px;
   padding-top: 40px;
   padding-bottom: 60px;
+  /* Make sure this has enough height to scroll */
+  min-height: 200%;
+  /* For smooth transform animations */
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
 }
 
 /* Individual testimonial card styling */
@@ -92,25 +102,21 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
-  transform-origin: center;
   margin: 15px 0;
-  opacity: 0.5;
-  transform: translateY(20px) scale(0.98);
-}
-
-.testimonial-card.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+  cursor: pointer;
+  /* Add fixed height to prevent size changes during scrolling */
+  min-height: 200px;
 }
 
-.testimonial-card:hover {
+/* .testimonial-card:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.09);
-}
+} */
 
 .testimonial-card::before {
   content: '';
@@ -166,25 +172,29 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 1.6;
-  max-height: 200px;
-  overflow-y: auto;
+  overflow: hidden;
   padding-right: 5px;
   margin-bottom: 15px;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
-.testimonial-text::-webkit-scrollbar {
-  width: 4px;
+.testimonial-text.non-interactive {
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
 }
 
-.testimonial-text::-webkit-scrollbar-track {
-  background: transparent;
+/* Ensure the parent testimonial card remains clickable */
+.testimonial-card {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10; /* Ensure card is above the container and can be clicked */
 }
 
-.testimonial-text::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+/* Styles for preventing interaction with text but keeping links clickable */
+.testimonial-footer .google-review-link {
+  pointer-events: auto;
+  position: relative;
+  z-index: 11; /* Ensure link is above everything and can be clicked */
 }
 
 .testimonial-text p {
@@ -225,14 +235,62 @@
   transition: opacity 0.3s ease;
 }
 
-.google-review-link:hover {
+/* .google-review-link:hover {
   opacity: 0.8;
-}
+} */
 
 .google-icon {
   font-size: 14px;
   margin-right: 4px;
   color: var(--secondary-color);
+}
+
+.view-all-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: var(--secondary-color);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  pointer-events: none;
+}
+
+/* .testimonial-card:hover .view-all-indicator {
+  opacity: 0.8;
+  transform: translateY(0);
+} */
+
+.view-all-reviews {
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 20; /* Ensure this is always clickable */
+  pointer-events: auto; /* Override the parent's pointer-events: none */
+}
+
+.view-all-reviews-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--secondary-color);
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: auto; /* Ensure this is always clickable */
+}
+
+.view-all-reviews-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Media queries for responsiveness */
@@ -254,7 +312,6 @@
 
   .testimonial-text {
     font-size: 14px;
-    max-height: 150px;
   }
 
   .testimonial-customer {

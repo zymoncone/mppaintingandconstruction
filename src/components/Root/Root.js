@@ -48,15 +48,14 @@ const Root = () => {
     <div className="root" id="root">
       {!isMobile &&
         <div className="navbar-container">
-          {/* <div className="nav-header-container">
-            <Logo />
-          </div> */}
           <div className="navbar">
-            <Logo />
+            <Link to={`/#root`} onClick={() => setOpen(false)}>
+              <Logo />
+            </Link>
             <div className="nav-links">
-              <Link to={`/`} className="past-projects-text">Home</Link>
               <Link to={`/services`} className="services-text">Services</Link>
               <Link to={`/past-projects`} className="past-projects-text">Past Projects</Link>
+              <Link to={`/reviews`} className="past-projects-text">Reviews</Link>
             </div>
             <div className="nav-more-info">
               <a href="https://www.facebook.com/mandpcompany/" target="_blank" rel="noreferrer" className="fb-logo-container">
@@ -81,6 +80,9 @@ const Root = () => {
                 <span className="nav-link-mobile" onClick={() => setRootOpen(false)}>
                   <Link to={`/past-projects#root`} className="root-button-text">Past Projects</Link>
                 </span>
+                <span className="nav-link-mobile" onClick={() => setRootOpen(false)}>
+                  <Link to={`/reviews#root`} className="root-button-text">Reviews</Link>
+                </span>
                 <div className="nav-menu-mobile-bottom-container">
                 <a className="nav-link-mobile root-button-text"
                    href="https://www.facebook.com/mandpcompany/"
@@ -102,7 +104,7 @@ const Root = () => {
           </div>
           <div className="navbar-mobile">
             <div className="hamburger-container">
-              <Link to={`/`} onClick={() => setOpen(false)}>
+              <Link to={`/#root`} onClick={() => setOpen(false)}>
                 <Logo />
               </Link>
               <div className="nav-button-header-container-row">
@@ -117,7 +119,7 @@ const Root = () => {
             <div className="grid-rows-collapsible" style={isOpen ? { gridTemplateRows: "1fr" } : {}}>
               <div className="nav-links-mobile" style={isOpen ? { borderBottom: "2px solid var(--primary-red)" } : {}}>
                 <span className="nav-link-mobile" onClick={() => setOpen(false)}>
-                  <Link to={`/`} className="services-text">Home</Link>
+                  <Link to={`/reviews`} className="services-text">Reviews</Link>
                 </span>
                 <span className="nav-link-mobile" onClick={() => setOpen(false)}>
                   <Link to={`/services`} className="services-text">Services</Link>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StarRating from "../StarRating/StarRating";
 import { FaGoogle } from "react-icons/fa";
 import "./ScrollingTestimonials.css";
@@ -47,45 +48,23 @@ const renderText = (text) => {
 
 // Testimonial card component
 const TestimonialCard = ({ testimonial }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const cardRef = useRef(null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // When card becomes visible in the viewport
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-10% 0px"
-      }
-    );
-
-    const currentCard = cardRef.current;
-    if (currentCard) {
-      observer.observe(currentCard);
-    }
-
-    return () => {
-      if (currentCard) {
-        observer.unobserve(currentCard);
-      }
-    };
-  }, []);
+  const handleCardClick = () => {
+    navigate('/reviews');
+  };
 
   return (
-    <div className={`testimonial-card ${isVisible ? 'visible' : ''}`} ref={cardRef}>
+    <div
+      className="testimonial-card visible" // Always visible
+      onClick={handleCardClick}
+    >
       <div className="testimonial-stars">
         <StarRating rating={testimonial.stars} />
       </div>
 
       <div className="testimonial-content">
-        <div className="testimonial-text">
+        <div className="testimonial-text non-interactive">
           {renderText(testimonial.quote)}
         </div>
       </div>
@@ -99,6 +78,7 @@ const TestimonialCard = ({ testimonial }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="google-review-link"
+              onClick={(e) => e.stopPropagation()} // Prevent card click when clicking the link
             >
               <FaGoogle className="google-icon" /> {testimonial.location}
             </a>
@@ -107,90 +87,74 @@ const TestimonialCard = ({ testimonial }) => {
           )}
         </div>
       </div>
+      <div className="view-all-indicator">Click to view all reviews</div>
     </div>
   );
 };
 
 const ScrollingTestimonials = ({ testimonials }) => {
   const scrollContainerRef = useRef(null);
-  const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const wrapperRef = useRef(null);
 
-  // Enable smooth vertical scrolling through testimonials
+  // CSS transform-based scrolling animation (no actual scrolling)
   useEffect(() => {
-    if (!autoScrollEnabled || !scrollContainerRef.current) return;
+    if (!scrollContainerRef.current) return;
 
-    const scrollContainer = scrollContainerRef.current;
-    const scrollHeight = scrollContainer.scrollHeight;
-    const clientHeight = scrollContainer.clientHeight;
+    const testimonialCards = document.querySelector('.testimonial-cards');
+    if (!testimonialCards) return;
 
-    // Don't scroll if there's not enough content
-    if (scrollHeight <= clientHeight) return;
+    let position = 0;
+    let scrollSpeed = 0.7; // pixels per frame
+    let lastTimestamp;
 
-    const scrollSpeed = 0.3; // pixels per frame - slower for a more elegant scroll
-    let animationFrameId;
-    let lastTimestamp = null;
-
-    const scroll = (timestamp) => {
-      if (lastTimestamp === null) {
+    // Animation using CSS transforms instead of scrollTop
+    const scrollAnimation = (timestamp) => {
+      if (!lastTimestamp) {
         lastTimestamp = timestamp;
       }
 
+      // Calculate elapsed time for consistent speed across framerates
       const elapsed = timestamp - lastTimestamp;
 
-      // Calculate how much to scroll based on time elapsed
-      let newPosition = scrollPosition + (scrollSpeed * elapsed / 16); // 16ms is approx one frame at 60fps
+      // Increment position (adjust for 60fps)
+      position += scrollSpeed * (elapsed / 16.67);
 
-      // Reset when we reach the bottom with some offset
-      if (newPosition >= scrollHeight - clientHeight) {
-        // Reset to just before the first duplicate testimonial
-        // This creates a smoother looping effect
-        newPosition = 0;
-
-        // Add a small delay before starting the loop again
-        setAutoScrollEnabled(false);
-        setTimeout(() => setAutoScrollEnabled(true), 1000);
+      // If we've scrolled too far, reset to give the appearance of looping
+      // Use the container height as the reset point
+      const maxScroll = testimonialCards.scrollHeight - scrollContainerRef.current.clientHeight;
+      if (position >= maxScroll) {
+        // Smooth reset by shifting just enough to make it look continuous
+        position = 0;
       }
 
-      setScrollPosition(newPosition);
-      scrollContainer.scrollTop = newPosition;
+      // Use CSS transform to move the content (smoother than scrollTop)
+      testimonialCards.style.transform = `translateY(-${position}px)`;
+
+      // Update timestamp
       lastTimestamp = timestamp;
 
-      animationFrameId = requestAnimationFrame(scroll);
+      // Continue the animation
+      animationFrame = requestAnimationFrame(scrollAnimation);
     };
 
-    animationFrameId = requestAnimationFrame(scroll);
+    // Start the animation
+    let animationFrame = requestAnimationFrame(scrollAnimation);
 
+    // Clean up on unmount
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrame);
     };
-  }, [autoScrollEnabled, scrollPosition]);
+  }, []); // No dependencies to prevent recreation
 
-  // Pause scrolling when user interacts with the container
-  const handleMouseEnter = () => {
-    setAutoScrollEnabled(false);
-  };
-
-  const handleMouseLeave = () => {
-    setAutoScrollEnabled(true);
-  };
-
-  const handleScroll = () => {
-    if (!autoScrollEnabled && scrollContainerRef.current) {
-      setScrollPosition(scrollContainerRef.current.scrollTop);
-    }
-  };
+  // No need for mouse interaction handlers with the new approach
 
   return (
-    <div className="scrolling-testimonials-wrapper">
+    <div className="scrolling-testimonials-wrapper" ref={wrapperRef}>
       <h2 className="testimonials-header">What Our Customers Say</h2>
 
       <div
         className="scrolling-testimonials-container"
         ref={scrollContainerRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onScroll={handleScroll}
       >
         <div className="testimonial-cards">
           {testimonials.map((testimonial, index) => (
@@ -208,6 +172,10 @@ const ScrollingTestimonials = ({ testimonials }) => {
             />
           ))}
         </div>
+      </div>
+
+      <div className="view-all-reviews">
+        <a href="/reviews" className="view-all-reviews-button">View All Customer Reviews</a>
       </div>
     </div>
   );
