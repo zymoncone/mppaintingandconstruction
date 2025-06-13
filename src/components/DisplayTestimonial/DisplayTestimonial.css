@@ -42,12 +42,35 @@
   font-weight: 200;
   font-size: 15px;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.google-review-link {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.google-review-link:hover {
+  opacity: 0.8;
+}
+
+.google-icon {
+  font-size: 16px;
+  margin-right: 4px;
+  color: var(--secondary-color);
 }
 
 @media screen and (max-width: 800px) {
   .testimonial {
-    width: 70%;
-    padding: 50px 0 0 0;
+    width: 85%;
+    padding: 30px 0 0 0;
+    margin-top: 50px;
   }
 
   .testimonial-title {
@@ -57,7 +80,10 @@
   }
 
   .customer-quote {
-    height: 100%;
+    height: auto;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-bottom: 15px;
   }
 
   .customer-quote p {
@@ -71,6 +97,10 @@
   .customer-location {
     font-family: "Expletus Sans", serif;
     font-size: 12px;
-    margin: 0 0 100px 0;
+    margin: 5px 0 80px 0;
+  }
+
+  .google-icon {
+    font-size: 14px;
   }
 }

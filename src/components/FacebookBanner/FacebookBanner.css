@@ -1,0 +1,159 @@
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: translateX(0%) rotate(-10deg);
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(200%) rotate(-10deg);
+  }
+  50.1% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0%) rotate(-10deg);
+  }
+}
+
+.facebook-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fb-logo);
+  color: var(--secondary-color);
+  padding: 18px 15px;
+  width: 100%;
+  text-align: center;
+  font-family: "Expletus Sans", serif;
+  font-weight: 500;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.facebook-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 25%, transparent 70%);
+  opacity: 0.8;
+  z-index: 1;
+  transform: rotate(-5deg);
+  pointer-events: none;
+}
+
+.facebook-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+  z-index: 1;
+  pointer-events: none;
+  animation: shine 6s infinite ease-in-out;
+}
+
+.facebook-banner a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.facebook-banner a:hover {
+  transform: translateY(-2px);
+}
+
+.facebook-banner a span {
+  position: relative;
+}
+
+.facebook-banner a span::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.facebook-banner a:hover span::after {
+  width: 100%;
+}
+
+.facebook-icon {
+  margin-right: 12px;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+@keyframes shine-mobile {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  20% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .facebook-banner {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+
+  .facebook-banner::before {
+    top: -80%;
+    left: -20%;
+    width: 140%;
+    height: 250%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 30%, transparent 75%);
+    opacity: 1;
+    transform: rotate(-15deg);
+  }
+
+  .facebook-banner::after {
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: shine-mobile 4s infinite ease-in-out;
+  }
+
+  .facebook-banner a {
+    font-size: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .facebook-icon {
+    font-size: 1.3rem;
+  }
+}

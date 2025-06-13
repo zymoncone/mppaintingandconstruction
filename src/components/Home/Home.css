@@ -1,7 +1,7 @@
 .home {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .home-top {
@@ -10,6 +10,8 @@
   align-items: center;
   padding: 0;
   margin: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .home-title {
@@ -30,14 +32,55 @@
 .vans {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   height: auto;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  /* The following ensures consistent height */
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+}
+
+.vans::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+}
+
+.slideshow-image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 2s ease;
+  position: relative;
+}
+
+.slideshow-image.in {
+  opacity: 1;
+}
+
+.slideshow-image.out {
+  opacity: 0;
 }
 
 .vans-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 0;
+  display: block;
+  transition: transform 0.7s ease;
+  object-fit: cover;
+}
+
+.vans:hover .vans-image {
+  transform: scale(1.02);
 }
 
 .image-container {
@@ -45,6 +88,99 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red) 0%, var(--fb-logo) 100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  z-index: 5;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.image-container:hover .hero-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-overlay h1 {
+  font-family: "Expletus Sans", serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  max-width: 80%;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.home-badge {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  background-color: var(--primary-red);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  transform: rotate(5deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.review-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.stars {
+  color: #FFBF00;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.review-highlight p {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.review-source {
+  font-weight: 600;
+  font-style: normal;
 }
 
 @media screen and (max-width: 800px) {
@@ -61,11 +197,22 @@
   .vans {
     margin: 0;
     padding: 0;
-    width: 100%;
+    height: 670px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
+    justify-content: right;
+    align-items: right;
+    /* Keep consistent container size */
+    aspect-ratio: auto;
+    position: relative;
+  }
+
+  .slideshow-image {
+    width: auto;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .image-container {
@@ -75,5 +222,72 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+  }
+
+  .hero-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    position: absolute;
+    background: var(--background-color);
+    color: var(--primary-color);
+    border-radius: 20px 20px 0 0;
+    padding: 45px 15px;
+    text-align: center;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+    text-shadow: none;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+    max-width: 100%;
+    text-shadow: none;
+    margin: 0 auto;
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      transform: rotate(5deg) scale(1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 0 0 rgba(255, 0, 0, 0);
+    }
+    50% {
+      transform: rotate(6deg) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+      transform: rotate(5deg) scale(1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
+
+  .home-badge {
+    top: 57%;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 20px;
+    animation: pulse-glow 2.5s infinite ease-in-out;
+  }
+
+  .nav-subheader {
+    padding: 10px;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+  }
+
+  .stars {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+  }
+
+  .review-highlight p {
+    font-size: 0.9rem;
+  }
+
+  .review-highlight {
+    align-items: center;
   }
 }

@@ -1,0 +1,40 @@
+.scroll-animation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: opacity, transform;
+}
+
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animation.fade-up {
+  transform: translateY(40px);
+}
+
+.scroll-animation.fade-left {
+  transform: translateX(-40px);
+}
+
+.scroll-animation.fade-right {
+  transform: translateX(40px);
+}
+
+.scroll-animation.scale {
+  transform: scale(0.92);
+}
+
+.scroll-animation.visible.fade-up,
+.scroll-animation.visible.fade-left,
+.scroll-animation.visible.fade-right,
+.scroll-animation.visible.scale {
+  transform: translate(0, 0) scale(1);
+}

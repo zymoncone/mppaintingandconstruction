@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: var(--primary-red);
+  background-color: var(--primary-white);
 }
 
 .nav-header-container {
@@ -59,11 +59,11 @@
 }
 
 .past-projects-text {
-  color: var(--secondary-color);
+  color: var(--primary-red);
 }
 
 .services-text {
-  color: var(--secondary-color);
+  color: var(--primary-red);
   margin: 0 35px;
 }
 
@@ -88,7 +88,7 @@
 .fb-logo {
   width: 35px;
   height: auto;
-  color: var(--secondary-color);
+  color: var(--fb-logo);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -97,16 +97,22 @@
 
 /* MOBILE */
 .navbar-mobile {
-  padding: 15px 0 0 0;
-  margin: 0;
+  padding: 9px 10px 10px 12px;
+  margin: 15px 0 0 0;
+  width: 95%;
+  border-radius: 10px;
   z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--background-color);
 }
 
 .hamburger-container {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 0 15px 0 15px;
   align-items: center;
 }
 
@@ -213,7 +219,7 @@
   padding: 0 0 0 0;
   background-color: rgba(255, 115, 115, 0);
   transition: background-color 300ms;
-  z-index: 1;
+  z-index: 2;
 }
 
 .root-button {

@@ -26,6 +26,8 @@ const TestimonialSlideShow = (props) => {
 
   return (
   <div className="testimonial-slideshow">
+    <h2 className="testimonial-header">What Our Customers Say</h2>
+    {/* <p className="testimonial-subheader">Trusted by homeowners across North Jersey</p> */}
     {mutliSlides && <SlArrowLeft className="testimonial-arrow testimonial-arrow-left" onClick={prevSlide}/>}
       {props.entry.map((src, idx) => {
         return(

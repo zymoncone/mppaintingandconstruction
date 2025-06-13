@@ -1,0 +1,17 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.star {
+  color: #ffb400;
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 800px) {
+  .star {
+    font-size: 16px;
+  }
+}

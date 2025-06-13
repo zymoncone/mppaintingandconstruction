@@ -1,4 +1,6 @@
 import "./DisplayTestimonial.css"
+import StarRating from "../StarRating/StarRating"
+import { FaGoogle } from "react-icons/fa"
 
 const hyperlink_color = {color:"#007bff"}
 
@@ -46,9 +48,25 @@ const DisplayTestimonial = ({ source,
   slide }) => {
 
   return (<div className={slide === index ? "testimonial" : "testimonial testimonial-hidden"}>
-    <h1 className="testimonial-title">What My Customers Say</h1>
+    {/* <h1 className="testimonial-title">What My Customers Say</h1> */}
     <div className="customer-quote">{renderText(source.quote)}</div>
-    <div className="customer-location">{source.customers} | {source.location}</div>
+
+    {source.stars && <StarRating rating={source.stars} />}
+
+    <div className="customer-location">
+      {source.customers} | {
+        source.location === "Google Review" ? (
+          <a
+            href={source.reviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="google-review-link"
+          >
+            <FaGoogle className="google-icon" /> {source.location}
+          </a>
+        ) : source.location
+      }
+    </div>
   </div>)
 }
 

@@ -14,7 +14,7 @@ const Contact = () => {
     const formData = new FormData(event.target);
 
     formData.append("access_key", access_key);
-    formData.append("subject", "New Contact Form Submission (M&P Painting and Remodeling)");
+    formData.append("subject", "New Contact Form Submission (M&P Painting and Construction)");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",

@@ -48,15 +48,11 @@ const Root = () => {
     <div className="root" id="root">
       {!isMobile &&
         <div className="navbar-container">
-          <div className="nav-header-container">
+          {/* <div className="nav-header-container">
             <Logo />
-            <div className="nav-subheader">
-              <span className="underlined">
-                Serving North New Jersey for over 20 years
-              </span>
-            </div>
-          </div>
+          </div> */}
           <div className="navbar">
+            <Logo />
             <div className="nav-links">
               <Link to={`/`} className="past-projects-text">Home</Link>
               <Link to={`/services`} className="services-text">Services</Link>
@@ -114,7 +110,7 @@ const Root = () => {
                   <span className="nav-link-button" onClick={() => setOpen(false)}>
                     <ContactButton text="Get In Touch" />
                   </span>
-                  <div className="nav-tel-text"><a href="tel:973-827-6350">(973) 827-6350</a></div>
+                  <div className="nav-tel-text"><a href="tel:973-827-6350">+1 (973) 827-6350</a></div>
                 </div>
               </div>
             </div>
