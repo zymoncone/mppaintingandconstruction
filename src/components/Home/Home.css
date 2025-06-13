@@ -197,19 +197,20 @@
   .vans {
     margin: 0;
     padding: 0;
-    height: 670px;
+    height: 85vh; /* Use viewport height instead of fixed height */
+    max-height: 670px;
     display: flex;
     flex-direction: column;
-    justify-content: right;
-    align-items: right;
+    justify-content: center;
+    align-items: center;
     /* Keep consistent container size */
     aspect-ratio: auto;
     position: relative;
   }
 
   .slideshow-image {
-    width: auto;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -222,6 +223,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
   }
 
   .hero-overlay {
@@ -233,6 +235,12 @@
     border-radius: 20px 20px 0 0;
     padding: 45px 15px;
     text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    transform: translateY(-2px); /* Ensure the border radius is visible */
   }
 
   .hero-overlay h1 {
@@ -263,10 +271,11 @@
   }
 
   .home-badge {
-    top: 57%;
+    top: 65%;
     right: 10px;
     padding: 5px 10px;
     font-size: 20px;
+    z-index: 20;
     animation: pulse-glow 2.5s infinite ease-in-out;
   }
 
@@ -281,6 +290,9 @@
   .stars {
     font-size: 1.2rem;
     margin-bottom: 3px;
+    color: #FFBF00;
+    display: flex;
+    gap: 2px;
   }
 
   .review-highlight p {

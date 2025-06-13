@@ -2,6 +2,7 @@ import "./Home.css";
 import { useState, useEffect, useRef } from "react";
 import { testimonials } from "../../media/testimonials";
 import { isMobileDevice } from "../../assets/helper_functions";
+import { FaStar } from "react-icons/fa";
 import ServicesBanner from "../ServicesBanner/ServicesBanner";
 import TestimonialSlideShow from "../TestimonialSlideShow/TestimonialSlideShow";
 import AboutBanner from "../AboutBanner/AboutBanner";
@@ -92,7 +93,11 @@ const Home = () => {
               <div className="hero-overlay">
                 <h1>North Jersey's Trusted Professionals</h1>
                 <div className="review-highlight">
-                  <div className="stars">★★★★★</div>
+                  <div className="stars">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} />
+                    ))}
+                  </div>
                   <p>"Exceptional quality and service" - <span className="review-source">Google Reviews</span></p>
                 </div>
               </div>

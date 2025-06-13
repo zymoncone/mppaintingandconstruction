@@ -1,6 +1,6 @@
 .cta-container {
   background: linear-gradient(135deg, var(--primary-color) 0%, #2a2825 100%);
-  padding: 80px 30px;
+  padding: 150px 30px;
   color: var(--secondary-color);
   text-align: center;
   position: relative;
@@ -76,7 +76,7 @@
 
 @media screen and (max-width: 768px) {
   .cta-container {
-    padding: 60px 20px;
+    padding: 110px 20px;
   }
 
   .cta-container h2 {
