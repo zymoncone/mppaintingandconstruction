@@ -51,7 +51,7 @@ const TestimonialCard = ({ testimonial }) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate('/reviews');
+    navigate('/reviews#root');
   };
 
   return (
@@ -175,7 +175,7 @@ const ScrollingTestimonials = ({ testimonials }) => {
       </div>
 
       <div className="view-all-reviews">
-        <a href="/reviews" className="view-all-reviews-button">View All Customer Reviews</a>
+        <a href="/reviews#root" className="view-all-reviews-button">View All Customer Reviews</a>
       </div>
     </div>
   );

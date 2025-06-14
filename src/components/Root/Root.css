@@ -11,8 +11,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
-  background-color: var(--primary-white);
+  padding: 20px 15px 15px 17px;
+  margin: 15px 0 0 0;
+  width: 95%;
+  border-radius: 10px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--background-color);
 }
 
 .nav-header-container {

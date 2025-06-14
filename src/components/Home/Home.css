@@ -71,7 +71,7 @@
 }
 
 .vans-image {
-  width: 100%;
+  width: 112%;
   height: auto;
   border-radius: 0;
   display: block;
@@ -143,7 +143,7 @@
 
 .home-badge {
   position: absolute;
-  top: 40px;
+  top: 150px;
   right: 30px;
   background-color: var(--primary-red);
   color: white;
@@ -154,7 +154,7 @@
   font-size: 2rem;
   transform: rotate(5deg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 5;
+  z-index: 10;
 }
 
 .review-highlight {
@@ -204,6 +204,10 @@
     /* Keep consistent container size */
     aspect-ratio: auto;
     position: relative;
+  }
+
+  .vans-image {
+    width: 100%;
   }
 
   .slideshow-image {

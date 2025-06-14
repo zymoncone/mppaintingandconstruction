@@ -1,5 +1,5 @@
 .services {
-  margin: 0;
+  margin: 130px 0 0 0;
   padding: 0 30px;
 }
 
@@ -52,10 +52,6 @@
   border-radius: 5px;
   width: 60%;
   padding: 50px 40px;
-}
-
-.service-list {
-
 }
 
 .service-title {
@@ -148,7 +144,7 @@
 
 @media screen and (max-width: 800px) {
   .services {
-    margin: 0;
+    margin: 100px 0 0 0;
   }
 
   .services-title {
