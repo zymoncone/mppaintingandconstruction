@@ -197,6 +197,12 @@
   z-index: 11; /* Ensure link is above everything and can be clicked */
 }
 
+.testimonial-footer .facebook-review-link {
+  pointer-events: auto;
+  position: relative;
+  z-index: 11; /* Ensure link is above everything and can be clicked */
+}
+
 .testimonial-text p {
   margin: 0 0 10px 0;
 }
@@ -235,12 +241,26 @@
   transition: opacity 0.3s ease;
 }
 
+.facebook-review-link {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
 /* .google-review-link:hover {
   opacity: 0.8;
 } */
 
-.google-icon {
+.google-icon-scrollable {
   font-size: 14px;
+  margin-right: 4px;
+  color: var(--secondary-color);
+}
+
+.facebook-icon-scrollable {
+  font-size: 16px;
   margin-right: 4px;
   color: var(--secondary-color);
 }

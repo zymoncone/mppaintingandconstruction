@@ -1,8 +1,9 @@
-import React from 'react';
+import { useMemo } from 'react';
 import { testimonials } from "../../media/testimonials";
 import StarRating from "../StarRating/StarRating";
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
 import ScrollAnimation from "../ScrollAnimation/ScrollAnimation";
+import { shuffleArray } from "../../assets/helper_functions";
 import "./Reviews.css";
 
 // Reuse the renderText function from DisplayTestimonial
@@ -55,7 +56,7 @@ const ReviewCard = ({ testimonial }) => {
 
       <div className="review-content">
         <div className="review-text">
-          {renderText(testimonial.quote)}
+          {testimonial.quote ? renderText(testimonial.quote) : <p>&nbsp;</p>}
         </div>
       </div>
 
@@ -68,8 +69,19 @@ const ReviewCard = ({ testimonial }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="google-review-link"
+              title="Google Review"
             >
-              <FaGoogle className="google-icon" /> {testimonial.location}
+              <FaGoogle className="google-icon" />
+            </a>
+          ) : testimonial.location === "Facebook Review" ? (
+            <a
+              href={testimonial.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="facebook-review-link"
+              title="Facebook Review"
+            >
+              <FaFacebook className="facebook-icon" />
             </a>
           ) : (
             testimonial.location
@@ -81,13 +93,16 @@ const ReviewCard = ({ testimonial }) => {
 };
 
 const Reviews = () => {
+  // Shuffle testimonials once when component mounts
+  const shuffledTestimonials = useMemo(() => shuffleArray(testimonials), []);
+
   return (
     <div className="reviews-page">
       <h1 className="reviews-title">Customer Testimonials</h1>
       <p className="reviews-subtitle">Read what our satisfied customers have to say about our services</p>
 
       <div className="reviews-container">
-        {testimonials.map((testimonial, index) => (
+        {shuffledTestimonials.map((testimonial, index) => (
           <ScrollAnimation key={index} type="fade-up" delay={index * 150}>
             <ReviewCard testimonial={testimonial} />
           </ScrollAnimation>

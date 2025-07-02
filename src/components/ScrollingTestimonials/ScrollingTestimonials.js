@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StarRating from "../StarRating/StarRating";
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { shuffleArray } from "../../assets/helper_functions";
 import "./ScrollingTestimonials.css";
 
 // Reuse the renderText function from DisplayTestimonial
@@ -78,9 +79,21 @@ const TestimonialCard = ({ testimonial }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="google-review-link"
-              onClick={(e) => e.stopPropagation()} // Prevent card click when clicking the link
+              onClick={(e) => e.stopPropagation()}
+              title="Google Review"
             >
-              <FaGoogle className="google-icon" /> {testimonial.location}
+              <FaGoogle className="google-icon-scrollable" />
+            </a>
+          ) : testimonial.location === "Facebook Review" ? (
+            <a
+              href={testimonial.reviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="facebook-review-link"
+              onClick={(e) => e.stopPropagation()}
+              title="Facebook Review"
+            >
+              <FaFacebook className="facebook-icon-scrollable" />
             </a>
           ) : (
             testimonial.location
@@ -95,6 +108,9 @@ const TestimonialCard = ({ testimonial }) => {
 const ScrollingTestimonials = ({ testimonials }) => {
   const scrollContainerRef = useRef(null);
   const wrapperRef = useRef(null);
+
+  // Shuffle testimonials once when component mounts
+  const shuffledTestimonials = useMemo(() => shuffleArray(testimonials), [testimonials]);
 
   // CSS transform-based scrolling animation (no actual scrolling)
   useEffect(() => {
@@ -157,7 +173,7 @@ const ScrollingTestimonials = ({ testimonials }) => {
         ref={scrollContainerRef}
       >
         <div className="testimonial-cards">
-          {testimonials.map((testimonial, index) => (
+          {shuffledTestimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
               testimonial={testimonial}
@@ -165,7 +181,7 @@ const ScrollingTestimonials = ({ testimonials }) => {
           ))}
 
           {/* Duplicate the first few testimonials to create seamless loop effect */}
-          {testimonials.slice(0, 2).map((testimonial, index) => (
+          {shuffledTestimonials.slice(0, 2).map((testimonial, index) => (
             <TestimonialCard
               key={`duplicate-${index}`}
               testimonial={testimonial}

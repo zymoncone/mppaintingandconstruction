@@ -26,10 +26,11 @@
 
 .reviews-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 380px));
   gap: 30px;
   max-width: 1300px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 /* Review card styling */
@@ -41,6 +42,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 450px; /* Increase minimum height for consistency */
+  width: 100%; /* Ensure full width of grid cell */
+  max-width: 380px; /* Consistent maximum width */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -70,6 +74,9 @@
 .review-content {
   flex: 1;
   margin-bottom: 20px;
+  min-height: 250px; /* Increase minimum height for content area */
+  display: flex;
+  flex-direction: column;
 }
 
 .review-text {
@@ -83,6 +90,11 @@
   padding-right: 5px;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  flex: 1; /* Fill remaining space in content area */
+  display: flex;
+  flex-direction: column;
+  min-height: 180px; /* Ensure minimum height for text area */
+  justify-content: flex-start; /* Align content to top */
 }
 
 .review-text::-webkit-scrollbar {
@@ -124,12 +136,53 @@
   font-weight: 400;
   display: flex;
   align-items: center;
+  margin-left: auto; /* Push to the right */
 }
 
 .review-source .google-icon {
-  font-size: 14px;
+  font-size: 18px !important;
   margin-right: 4px;
-  color: #4285F4;
+  color: #4285F4 !important;
+}
+
+.review-source .facebook-icon {
+  font-size: 21px !important;
+  margin-right: 4px;
+  color: #1877F2 !important;
+}
+
+.google-review-link {
+  display: flex;
+  align-items: center;
+  color: #666;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.google-review-link:hover {
+  opacity: 0.8;
+}
+
+.facebook-review-link {
+  display: flex;
+  align-items: center;
+  color: #666;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.facebook-review-link:hover {
+  opacity: 0.8;
+}
+
+.facebook-icon {
+  margin-right: 4px;
+  color: #1877F2; /* Facebook blue */
+}
+
+.google-icon {
+  margin-right: 4px;
+  color: #4285F4; /* Google blue */
 }
 
 @media screen and (max-width: 800px) {
@@ -149,14 +202,30 @@
   .reviews-container {
     grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center; /* Center cards on mobile */
   }
 
   .review-card {
     padding: 25px;
+    min-height: auto; /* Allow cards to adjust to content height on mobile */
+    width: 100%; /* Full width of container */
+    max-width: 100%; /* Remove max-width constraint on mobile */
+  }
+
+  .review-content {
+    min-height: auto; /* Allow content area to adjust to actual content */
+    margin-bottom: 15px; /* Reduce margin for shorter cards */
   }
 
   .review-text {
     font-size: 15px;
-    max-height: 300px;
+    max-height: none; /* Remove max-height constraint */
+    min-height: auto; /* Allow text area to adjust to content */
+  }
+
+  /* For reviews with no or minimal text, ensure adequate spacing */
+  .review-text:empty,
+  .review-text p:only-child:empty {
+    padding: 10px 0; /* Minimal padding for empty text areas */
   }
 }
